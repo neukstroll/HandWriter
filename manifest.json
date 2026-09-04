@@ -1,0 +1,16 @@
+{
+  "name": "HandWriter — рукописные конспекты",
+  "short_name": "HandWriter",
+  "description": "Превращаем ваш текст в красивый рукописный формат на тетрадном листе.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#15120D",
+  "theme_color": "#15120D",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

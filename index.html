@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HandWriter — рукописные конспекты на заказ</title>
+<meta name="description" content="Превращаем ваш текст в красивый рукописный формат на тетрадном листе. Качественно, аккуратно, недорого.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Smartphone / PWA integration: installable, themed status bar, home-screen icon -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#15120D">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HandWriter">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#top" class="brand">
+    <span class="brand-mark">HW</span>
+    <span class="brand-name">HandWriter</span>
+  </a>
+  <a class="topbar-cta topbar-cta-desktop" href="https://t.me/HandWriterUA" target="_blank" rel="noopener">
+    Открыть канал
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Открыть меню">
+    <span class="menu-bar"></span>
+    <span class="menu-bar"></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="#pen" data-nav-link>Цвет ручки</a>
+  <a href="#info" data-nav-link>О услуге</a>
+  <a href="#reviews" data-nav-link>Отзывы</a>
+  <a href="#prices" data-nav-link>Цены</a>
+  <a class="btn btn-primary mobile-nav-cta" href="https://t.me/HandWriterUA" target="_blank" rel="noopener" data-nav-link>
+    <span>Открыть канал</span>
+  </a>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <p class="hero-eyebrow">почерк, который не отличить от настоящего</p>
+    <h1 class="hero-title">
+      Ваш текст,<br>переписанный от руки.
+    </h1>
+    <svg class="hero-stroke" viewBox="0 0 420 40" fill="none" aria-hidden="true">
+      <path class="hero-stroke-path" d="M4 28C60 8 110 38 170 22C220 8 260 34 320 18C355 8 385 24 416 12"
+            stroke="url(#strokeGrad)" stroke-width="4" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="strokeGrad" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#C9A24D"/>
+          <stop offset="1" stop-color="#E7CE8E"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <p class="hero-sub">
+      Присылаете текст — получаете аккуратные тетрадные листы, исписанные вручную.
+      Конспекты, рефераты, письма — всё, что нужно сделать «живым».
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://t.me/HandWriterUA" target="_blank" rel="noopener">
+        <span>Перейти в канал</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="https://t.me/NEUKS_TROLL" target="_blank" rel="noopener">
+        <span>Написать напрямую</span>
+      </a>
+    </div>
+
+    <div class="hero-badges" aria-hidden="true">
+      <span>Качественно</span>
+      <span class="dot">•</span>
+      <span>Аккуратно</span>
+      <span class="dot">•</span>
+      <span>Недорого</span>
+    </div>
+  </section>
+
+  <!-- PEN PICKER -->
+  <section class="section reveal" id="pen">
+    <h2 class="section-title">Выберите цвет ручки</h2>
+    <p class="section-lead">Пишем той ручкой, которая нужна вам — цвет чернил выбираете вы, а мы подстроимся под лист.</p>
+
+    <div class="pen-block">
+      <div class="pen-swatches" role="group" aria-label="Выбор цвета ручки">
+        <button class="pen-swatch is-active" style="--swatch:#211C14" data-pen="#211C14" data-name="чёрная" aria-pressed="true">
+          <span class="pen-dot"></span>
+        </button>
+        <button class="pen-swatch" style="--swatch:#2B4C7E" data-pen="#2B4C7E" data-name="синяя" aria-pressed="false">
+          <span class="pen-dot"></span>
+        </button>
+        <button class="pen-swatch" style="--swatch:#A63B32" data-pen="#A63B32" data-name="красная" aria-pressed="false">
+          <span class="pen-dot"></span>
+        </button>
+        <button class="pen-swatch" style="--swatch:#2F6B4F" data-pen="#2F6B4F" data-name="зелёная" aria-pressed="false">
+          <span class="pen-dot"></span>
+        </button>
+        <button class="pen-swatch" style="--swatch:#6B4A8C" data-pen="#6B4A8C" data-name="фиолетовая" aria-pressed="false">
+          <span class="pen-dot"></span>
+        </button>
+      </div>
+
+      <div class="sample-page">
+        <div class="sample-margin" aria-hidden="true"></div>
+        <p class="sample-line" data-sample-text>Дорогой читатель, если ты видишь этот текст —</p>
+        <p class="sample-line" data-sample-text>значит почерк действительно похож на живой.</p>
+        <p class="sample-line" data-sample-text>Каждая буква выведена вручную, без принтера</p>
+        <p class="sample-line" data-sample-text>и без «роботизированных» шрифтов-подделок.</p>
+        <p class="sample-line sample-line-accent" data-sample-text>Ручка: <span data-pen-name>чёрная</span>. — HandWriter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO TABS -->
+  <section class="section reveal" id="info">
+    <h2 class="section-title">Подробнее об услуге</h2>
+    <p class="section-lead">Всё, что стоит знать перед заказом — в трёх вкладках.</p>
+
+    <div class="tabs" data-tabs>
+      <div class="tabs-list" role="tablist" aria-label="Информация об услуге">
+        <button class="tab" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="true" data-tab="about">О нас</button>
+        <button class="tab" role="tab" id="tab-materials" aria-controls="panel-materials" aria-selected="false" tabindex="-1" data-tab="materials">Материалы</button>
+        <button class="tab" role="tab" id="tab-timing" aria-controls="panel-timing" aria-selected="false" tabindex="-1" data-tab="timing">Сроки</button>
+        <span class="tab-indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="tab-panels">
+        <div class="tab-panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about">
+          <p>HandWriter — это небольшая команда, которая переписывает ваши тексты от руки на тетрадных листах. Никаких «шрифтов под почерк» — только настоящая ручка, настоящая бумага и внимание к каждой странице.</p>
+          <p>Подходит для конспектов, рефератов, писем, поздравлений и любых текстов, которым важно выглядеть «живыми».</p>
+        </div>
+        <div class="tab-panel" id="panel-materials" role="tabpanel" aria-labelledby="tab-materials" hidden>
+          <p>Пишем на стандартных тетрадных листах в линию. Цвет чернил — на ваш выбор: чёрный, синий, красный, зелёный или фиолетовый.</p>
+          <p>По запросу можем использовать разлиновку в клетку или подобрать почерк ровнее / небрежнее — под учебный или личный стиль.</p>
+        </div>
+        <div class="tab-panel" id="panel-timing" role="tabpanel" aria-labelledby="tab-timing" hidden>
+          <p>Небольшие заказы (до 5 листов) обычно готовы в течение дня. Более объёмные — обсуждаем срок индивидуально при оформлении заказа.</p>
+          <p>Точное время всегда согласовываем заранее в переписке, чтобы вы не переживали за дедлайн.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section reveal how-section">
+    <h2 class="section-title">Как заказать</h2>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num">1</span>
+        <div class="step-body">
+          <h3>Напишите нам</h3>
+          <p>Свяжитесь через <a href="https://t.me/NEUKS_TROLL" target="_blank" rel="noopener">@NEUKS_TROLL</a> и пришлите текст, который нужно переписать от руки.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">2</span>
+        <div class="step-body">
+          <h3>Согласуем детали</h3>
+          <p>Уточняем количество листов, цвет ручки и срок — и называем точную цену в гривнах.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">3</span>
+        <div class="step-body">
+          <h3>Получаете готовые листы</h3>
+          <p>Фотографируем каждую страницу и присылаем вам — быстро, реалистично, аккуратно.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section reveal testimonial-section" id="reviews">
+    <h2 class="section-title">Отзывы</h2>
+    <p class="section-lead">Несколько слов от тех, кто уже заказывал.</p>
+
+    <div class="testimonials">
+      <article class="testimonial-card">
+        <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+        <p class="testimonial-text">Заказывала конспект по литературе на 15 листов — почерк вышел настолько похожим на мой собственный, что преподаватель ничего не заподозрил. Сделали быстро, буквально за день.</p>
+        <p class="testimonial-author">— Аня, студентка</p>
+      </article>
+      <article class="testimonial-card">
+        <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+        <p class="testimonial-text">Нужно было красиво оформить письмо в подарок — предложили выбрать цвет чернил, получилось очень тепло и по-настоящему рукописно. Однозначно буду обращаться ещё.</p>
+        <p class="testimonial-author">— Данил, постоянный клиент</p>
+      </article>
+      <article class="testimonial-card">
+        <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+        <p class="testimonial-text">Цены приятно удивили — 25 листов обошлись гораздо дешевле, чем я ожидала. Общение в телеграме было простое и быстрое, все детали обсудили за пару сообщений.</p>
+        <p class="testimonial-author">— Марина, заказ рефератов</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section reveal price-section" id="prices">
+    <h2 class="section-title">Цены</h2>
+    <p class="section-lead">Оплата принимается только в гривнах (₴).</p>
+
+    <ul class="price-list">
+      <li class="price-row">
+        <span class="price-check" aria-hidden="true">✓</span>
+        <span class="price-label">5 листов</span>
+        <span class="price-dots" aria-hidden="true"></span>
+        <span class="price-value">10 ₴</span>
+      </li>
+      <li class="price-row">
+        <span class="price-check" aria-hidden="true">✓</span>
+        <span class="price-label">15 листов</span>
+        <span class="price-dots" aria-hidden="true"></span>
+        <span class="price-value">30 ₴</span>
+      </li>
+      <li class="price-row">
+        <span class="price-check" aria-hidden="true">✓</span>
+        <span class="price-label">25 листов</span>
+        <span class="price-dots" aria-hidden="true"></span>
+        <span class="price-value">50 ₴</span>
+      </li>
+    </ul>
+
+    <a class="btn btn-primary price-cta" href="https://t.me/HandWriterUA" target="_blank" rel="noopener">
+      <span>Смотреть примеры в канале</span>
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- CONTACT / FINAL CTA -->
+  <section class="section reveal contact-section">
+    <h2 class="section-title">Готовы заказать?</h2>
+    <p class="section-lead">Подпишитесь на канал, чтобы не пропустить работы и цены, либо напишите нам напрямую.</p>
+
+    <div class="contact-buttons">
+      <a class="btn btn-primary btn-large" href="https://t.me/HandWriterUA" target="_blank" rel="noopener">
+        <span>Telegram-канал HandWriter</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost btn-large" href="https://t.me/NEUKS_TROLL" target="_blank" rel="noopener">
+        <span>Написать @NEUKS_TROLL</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>💙 HandWriter — почерк на заказ</p>
+  <p class="footer-sub">Все работы выполняются вручную. Украина 🇺🇦</p>
+</footer>
+
+<!-- Sticky mobile quick-access bar (phones only, see CSS) -->
+<div class="mobile-dock" role="navigation" aria-label="Быстрые действия">
+  <a class="mobile-dock-btn mobile-dock-primary" href="https://t.me/HandWriterUA" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 4L2.5 11.5c-1 .4-1 1.6 0 2l4.7 1.6L18 8l-8.5 9 .1 4.4c.4 1 1.6 1.1 2.2.2l2.6-3.6 4.8 3.5c.9.6 2 .1 2.2-1l2.1-14.7c.2-1.3-1.1-2.3-2.3-1.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span>Канал</span>
+  </a>
+  <a class="mobile-dock-btn" href="https://t.me/NEUKS_TROLL" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span>Написать</span>
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
